@@ -1,0 +1,21 @@
+# Kernel Lib
+accelerate==0.34.2
+chromadb==0.5.11
+numpy==1.26.4
+ollama==0.3.3
+requests==2.32.3
+sounddevice==0.5.0
+soundfile==0.12.1
+streamlit==1.40.0
+transformers==4.45.0
+TTS==0.22.0
+
+# Tools Lib
+pycaw==20240210
+nltk==3.9.1
+opencv-python==4.10.0.84
+pyautogui==0.9.54
+requests==2.32.3
+PyAutoGUI==0.9.54
+opencv-python==4.10.0.84
+pywhatkit==5.4
