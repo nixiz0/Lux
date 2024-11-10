@@ -29,9 +29,9 @@ By default you have a fiew tools already installed on the app, you can check the
 
 If you want to install some tools official or build by the community you can go here : 
 
-- Official-Tools : (link to github tools)
+- Official-Tools : [(official-tools)](https://github.com/nixiz0/Lux-Tools/tree/official-tools)
 
-- Community-Tools : (link to github tools)
+- Community-Tools : [(community-tools)](https://github.com/nixiz0/Lux-Tools/tree/community-tools)
 
 
 ## Author
