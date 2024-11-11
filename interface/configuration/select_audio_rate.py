@@ -4,6 +4,9 @@ from configuration.update_config import update_config
 
 
 def set_audio_rate():
+    """
+    Configures the audio rate size for the application.
+    """
     audio_rate = st.number_input("Configurer votre débit Audio (par défaut 44100)" if LANGUAGE == 'fr' else
                                  "Configure your Audio rate (default 44100)", value=AUDIO_RATE)
     if st.button("Mettre à jour" if LANGUAGE == 'fr' else "Update", key='btn_set_audio_rate'):

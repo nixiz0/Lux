@@ -10,6 +10,18 @@ from kernel.tools.tools_list import tools
 
 
 def start_lux(tools=tools):
+    """
+    Starts the Lux system, which involves connecting to a client, retrieving tool embeddings,
+    and processing voice commands to determine the appropriate tool to use.
+
+    Parameters:
+    tools (list): A list of tools available for use in the system.
+
+    The function initializes the necessary components, listens for voice commands, and processes
+    them to determine the appropriate response. It handles pausing and resuming the system based
+    on specific keywords and stops the system when instructed.
+    """
+    
     # Connect to the client & Get collection
     client = chromadb.PersistentClient(path=TEMP_TOOLS_DB_PATH)
     collection = client.get_collection(COLLECTION_NAME)

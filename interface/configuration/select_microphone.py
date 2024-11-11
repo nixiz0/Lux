@@ -5,6 +5,9 @@ from configuration.update_config import update_config
 
 
 def set_micro():
+    """
+    Configures the microphone for the application.
+    """
     devices = sd.query_devices()
     valid_devices = [(i, device['name']) for i, device in enumerate(devices) if device['max_input_channels'] > 0 and device['hostapi'] == 0]
 

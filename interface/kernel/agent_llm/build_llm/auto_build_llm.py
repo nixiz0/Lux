@@ -6,6 +6,16 @@ from CONFIG import *
 
 
 def build_the_model():
+    """
+    Builds a language model by running the 'ollama show' command, modifying the output,
+    and then creating the model using the 'ollama create' command.
+
+    The function performs the following steps:
+    1. Runs the 'ollama show' command to get the model file.
+    2. Writes the output to a file named 'modelfile'.
+    3. Modifies the content of the 'modelfile' to replace the SYSTEM instruction and remove the LICENSE section.
+    4. Executes the 'ollama create' command to create the model.
+    """
     # Run the 'ollama show' command and get the output
     show_result = subprocess.run(['ollama', 'show', LLM_DEFAULT_TO_PULL, '--modelfile'], shell=True, capture_output=True, text=True, encoding='utf-8')
 

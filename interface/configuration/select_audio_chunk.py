@@ -4,6 +4,9 @@ from configuration.update_config import update_config
 
 
 def set_audio_chunk():
+    """
+    Configures the audio chunk size for the application.
+    """
     audio_chunk = st.number_input("Configurer votre chunk Audio (par défaut 1024)" if LANGUAGE == 'fr' else
                                   "Configure your Audio chunk (default 1024)", value=AUDIO_CHUNK)
     if st.button("Mettre à jour" if LANGUAGE == 'fr' else "Update", key='btn_set_audio_chunk'):

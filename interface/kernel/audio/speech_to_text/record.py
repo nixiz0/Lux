@@ -10,7 +10,21 @@ from CONFIG import *
 
 def record_audio(language=LANGUAGE, filename=TEMP_AUDIO_PATH, device_index=MIC_INDEX,
                  rate=AUDIO_RATE, chunk=AUDIO_CHUNK, threshold=AUDIO_THRESHOLD, pre_recording_buffer_length=AUDIO_BUFFER_LENGTH):
-    
+    """
+    Records audio from the microphone until a period of silence is detected.
+
+    Parameters:
+    language (str): The language for status messages.
+    filename (str): The path to save the recorded audio file.
+    device_index (int): The index of the microphone device to use.
+    rate (int): The sample rate for recording.
+    chunk (int): The size of each audio chunk to read.
+    threshold (float): The RMS threshold to start and stop recording.
+    pre_recording_buffer_length (int): The length of the buffer to store pre-recording audio.
+
+    Returns:
+    bool: True if audio was recorded and saved, False otherwise.
+    """
     if not os.path.exists(os.path.dirname(filename)):
         os.makedirs(os.path.dirname(filename))
 
@@ -21,6 +35,15 @@ def record_audio(language=LANGUAGE, filename=TEMP_AUDIO_PATH, device_index=MIC_I
     silence_count = 0
 
     def callback(indata, frame_count, time_info, status):
+        """
+        Callback function to process audio chunks.
+
+        Parameters:
+        indata (numpy.ndarray): The recorded audio data.
+        frame_count (int): The number of frames in the audio data.
+        time_info (dict): Dictionary containing timing information.
+        status (sounddevice.CallbackFlags): Status of the audio stream.
+        """
         nonlocal recording, silence_count, frames, recording_frames
         if status:
             st.write(status)

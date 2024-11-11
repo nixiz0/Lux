@@ -8,6 +8,16 @@ from kernel.agent_llm.llm.llm_embeddings import generate_embedding
 
 # Function to find the most similar tool
 def get_most_similar_tool(user_prompt, embeddings_data):
+    """
+    Finds the most similar tool to the user prompt based on cosine similarity of embeddings.
+
+    Parameters:
+    user_prompt (str): The user's input prompt.
+    embeddings_data (dict): A dictionary containing tool embeddings and their corresponding IDs.
+
+    Returns:
+    str or None: The ID of the most similar tool if the similarity exceeds the threshold, otherwise None.
+    """
     # Generates the embedding for the user prompt and resizes it
     user_embedding = np.array(generate_embedding(user_prompt)).reshape(1, -1)
 

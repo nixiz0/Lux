@@ -11,7 +11,21 @@ from CONFIG import *
 
 
 class LuxVoice:
+    """
+    A class to handle voice synthesis and playback using a TTS model.
+
+    Attributes:
+    device (str): The device to run the TTS model on (GPU if available, otherwise CPU).
+    tts (TTS): The TTS model for voice cloning.
+    audio_queue (queue.Queue): A queue to manage audio files to be played.
+    lock (threading.Lock): A lock to prevent multiple threads from accessing shared resources.
+    playing_event (threading.Event): An event to control the audio playback thread.
+    """
+
     def __init__(self):
+        """
+        Initializes the LuxVoice class, setting up the TTS model, device, and necessary directories and queues.
+        """
         # Use GPU if available, otherwise use CPU
         self.device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
@@ -36,6 +50,9 @@ class LuxVoice:
 
     # Function to play the audio
     def play_audio(self):
+        """
+        Continuously plays audio files from the queue until a None value is encountered.
+        """
         while True:
             file_path = self.audio_queue.get()
             if file_path is None:
@@ -54,6 +71,14 @@ class LuxVoice:
         self.playing_event.clear()
 
     def speak(self, user_text, language=LANGUAGE, speed=SPEED_VOICE):
+        """
+        Converts the given text to speech and plays it.
+
+        Parameters:
+        user_text (str): The text to be converted to speech.
+        language (str): The language of the text.
+        speed (float): The speed of the speech.
+        """
         if user_text is None:
             return
 
@@ -105,6 +130,16 @@ class LuxVoice:
                 self.audio_queue.put(temp_file_path)
     
     def _speak(self, user_text, file_path, speaker_wav, language, speed):
+        """
+        Generates an audio file from the given text using the TTS model.
+
+        Parameters:
+        user_text (str): The text to be converted to speech.
+        file_path (str): The path to save the generated audio file.
+        speaker_wav (str): The path to the speaker's voice file for cloning.
+        language (str): The language of the text.
+        speed (float): The speed of the speech.
+        """
         # Generate the audio file from the text
         self.tts.tts_to_file(text=user_text, 
                              file_path=file_path,

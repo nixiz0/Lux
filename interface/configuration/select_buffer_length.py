@@ -4,6 +4,9 @@ from configuration.update_config import update_config
 
 
 def set_buffer_length():
+    """
+    Configures the buffer length for the application.
+    """
     buffer_length = st.number_input("Configurer votre buffer Audio (par défaut 2)" if LANGUAGE == 'fr' else
                                     "Configure your Audio buffer (default 2)", min_value=1,value=AUDIO_BUFFER_LENGTH)
     if st.button("Mettre à jour" if LANGUAGE == 'fr' else "Update", key='btn_set_buffer_length'):

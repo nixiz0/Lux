@@ -7,7 +7,22 @@ punctuation_keep = "".join([char for char in string.punctuation if char not in [
 translator = str.maketrans('', '', punctuation_keep)
 
 class SpeechToText:
+    """
+    A class to handle speech-to-text transcription using a pre-trained Whisper model.
+
+    Attributes:
+    device (str): The device to run the model on (GPU if available, otherwise CPU).
+    torch_dtype (torch.dtype): The data type for the model (float16 if GPU is available, otherwise float32).
+    model_id (str): The identifier for the pre-trained Whisper model.
+    model (AutoModelForSpeechSeq2Seq): The pre-trained Whisper model for speech-to-text.
+    processor (AutoProcessor): The processor for the Whisper model.
+    pipe (pipeline): The pipeline for automatic speech recognition.
+    """
+
     def __init__(self):
+        """
+        Initializes the SpeechToText class, setting up the model, processor, and pipeline for speech-to-text transcription.
+        """
         self.device = "cuda:0" if torch.cuda.is_available() else "cpu"
         self.torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
 
@@ -32,6 +47,15 @@ class SpeechToText:
         )
 
     def transcribe(self, audio_output):
+        """
+        Transcribes the given audio output to text.
+
+        Parameters:
+        audio_output (str): The path to the audio file to be transcribed.
+
+        Returns:
+        str: The transcribed text.
+        """
         # Transcribe Speech to Text
         results = self.pipe(audio_output)
         results = results['text'].lower()

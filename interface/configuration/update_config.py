@@ -1,4 +1,11 @@
 def update_config(key, value):
+    """
+    Updates the configuration file with a new value for a specified key.
+
+    Parameters:
+    key (str): The configuration key to update.
+    value (any): The new value to set for the specified key.
+    """
     with open('interface/CONFIG.py', 'r') as file:
         lines = file.readlines()
 

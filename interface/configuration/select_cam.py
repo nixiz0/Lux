@@ -5,6 +5,15 @@ from configuration.update_config import update_config
 
 
 def list_video_devices():
+    """
+    Lists all available video capture devices.
+
+    Iterates through possible video capture device indices and checks if they are available.
+    Returns a list of tuples containing the index and name of each available device.
+
+    Returns:
+    list: A list of tuples where each tuple contains the index and name of a video capture device.
+    """
     index = 0
     devices = []
     while True:
@@ -18,6 +27,15 @@ def list_video_devices():
     return devices
 
 def set_video_device():
+    """
+    Sets the video capture device for the application.
+
+    Lists available video devices and allows the user to select one. Provides options to test the selected device
+    and update the configuration with the selected device index.
+
+    Returns:
+    int or None: The index of the selected video capture device, or None if no devices are found.
+    """
     devices = list_video_devices()
     if not devices:
         st.error("Aucun périphérique de capture vidéo trouvé." if LANGUAGE == 'fr' else "No video capture devices found.")

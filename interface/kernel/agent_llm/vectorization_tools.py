@@ -10,11 +10,27 @@ from kernel.agent_llm.llm.llm_embeddings import generate_embedding
 
 # Generate and store tool description embeddings only once
 def generate_tool_embeddings(tools):
+    """
+    Generates embeddings for the descriptions of the provided tools.
+
+    Parameters:
+    tools (dict): A dictionary of tools where each tool has a description.
+
+    Returns:
+    list: A list of embeddings for the tool descriptions.
+    """
     tool_descriptions = [tools[tool]["description"] for tool in tools]
     embeddings = [generate_embedding(description) for description in tool_descriptions]
     return embeddings
 
 def tools_vectorization():
+    """
+    Generates and stores tool description embeddings in Chroma DB. If the embeddings already exist,
+    it provides an option to revectorize the tools.
+
+    Returns:
+    dict: The embeddings data from Chroma DB.
+    """
     embeddings_data = None 
     
     # Check if the folder exists, if not create it and vectorize tools
