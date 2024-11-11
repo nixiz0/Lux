@@ -3,6 +3,12 @@ from CONFIG import LANGUAGE
 
 
 def mic_record_threshold():
+    """
+    Prompts the user to set the microphone sensitivity and updates the configuration file accordingly.
+
+    The function asks the user to input a new microphone sensitivity value. If no value is provided, it defaults to 500.
+    It then updates the 'AUDIO_THRESHOLD' setting in the 'CONFIG.py' file and confirms the new sensitivity value.
+    """
     # Ask user for microphone sensitivity
     threshold = input(f"{GREEN}Entrez la sensibilité du microphone (par défaut 500):{RESET} " if LANGUAGE == 'fr' else 
                       f"{GREEN}Enter the microphone sensitivity (default 500):{RESET} ")

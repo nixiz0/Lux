@@ -4,6 +4,12 @@ from CONFIG import LANGUAGE
 
 
 def update_config(mic_index):
+    """
+    Updates the microphone index in the configuration file.
+
+    Parameters:
+    mic_index (int): The index of the microphone to be set in the configuration.
+    """
     with open('CONFIG.py', 'r') as file:
         lines = file.readlines()
 
@@ -15,6 +21,15 @@ def update_config(mic_index):
                 file.write(line)
 
 def select_microphone():
+    """
+    Prompts the user to select a valid microphone from the available input devices.
+
+    Lists all available input devices and allows the user to select one by entering its ID.
+    Updates the configuration with the selected microphone ID.
+
+    Returns:
+    int or None: The index of the selected microphone, or None if no valid input devices are found.
+    """
     try:
         devices = sd.query_devices()
         valid_ids = []

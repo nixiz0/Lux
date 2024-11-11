@@ -6,6 +6,16 @@ from constant.colors import *
 
 
 def build_the_model():
+    """
+    Builds a language model by running the 'ollama show' command, modifying the output,
+    and then creating the model using the 'ollama create' command.
+    
+    The function performs the following steps:
+    1. Runs the 'ollama show' command to get the model file.
+    2. Writes the output to a file named 'modelfile'.
+    3. Modifies the content of the 'modelfile' to replace the SYSTEM instruction and remove the LICENSE section.
+    4. Executes the 'ollama create' command to create the model.
+    """
     # Run the 'ollama list' command and get the output
     result = subprocess.run(['ollama', 'list'], capture_output=True, text=True)
     

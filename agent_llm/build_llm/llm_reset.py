@@ -5,6 +5,9 @@ from agent_llm.build_llm.auto_build_llm import build_the_model
 
 
 def choose_llm_reset():
+    """
+    Prompts the user to choose whether to remove or keep the assistant and performs the corresponding action.
+    """
     while True:
         choice = input(f"{GREEN}\nTapez 1 pour supprimer l'assistant ou 2 pour le conserver : {RESET}" if LANGUAGE == 'fr' else 
                        f"{GREEN}\nType 1 to remove the assistant or 2 to keep it : {RESET}")
