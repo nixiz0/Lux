@@ -25,14 +25,14 @@ ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 ChangesAssociations=yes
 DisableProgramGroupPage=yes
-LicenseFile=C:\Users\username\Desktop\Lux-Interface\license.txt
-InfoBeforeFile=C:\Users\username\Desktop\Lux-Interface\README.md
-InfoAfterFile=C:\Users\username\Desktop\Lux-Interface\README.md
+LicenseFile=C:\Users\username\Desktop\Lux\license.txt
+InfoBeforeFile=C:\Users\username\Desktop\Lux\README.md
+InfoAfterFile=C:\Users\username\Desktop\Lux\README.md
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 OutputDir=C:\Users\username\Desktop
 OutputBaseFilename=Lux-Interface-Installer
-SetupIconFile=C:\Users\username\Desktop\Lux-Interface\interface\ressources\logo-installer-lux.ico
+SetupIconFile=C:\Users\username\Desktop\Lux\interface\ressources\logo-installer-lux.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -45,8 +45,8 @@ Name: "french"; MessagesFile: "compiler:Languages\French.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\username\Desktop\Lux-Interface\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\username\Desktop\Lux-Interface\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: ".git\*; tools_vector_db\*; temp_audio\*; temp_voice\*; __pycache__\*; photos\*; modelfile"
+Source: "C:\Users\username\Desktop\Lux\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\username\Desktop\Lux\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: ".git\*; tools_vector_db\*; temp_audio\*; temp_voice\*; __pycache__\*; photos\*; modelfile"
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]

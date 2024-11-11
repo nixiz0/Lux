@@ -3,7 +3,6 @@ from kernel.tools.tools_functions.tools_response.hello_sir import hello
 from kernel.tools.tools_functions.pause_system import pause_running
 from kernel.tools.tools_functions.exit_system import stop_running
 from kernel.tools.tools_functions.tools_action.time import time_in_locale, date_in_locale
-from kernel.tools.tools_functions.tools_action.audio_management.audio_gestion import mute, demute, volume_increase, volume_decrease
 from kernel.tools.tools_functions.tools_action.code_mode.start_code_mode import use_code_mode
 from kernel.tools.tools_functions.tools_action.discussion_mode.start_discussion_mode import use_discussion_mode
 from kernel.tools.tools_functions.tools_action.cam.screen_cam import screen_with_cam
@@ -33,22 +32,6 @@ tools = {
     "date_in_locale": {"description": "quelle est la date actuelle" if LANGUAGE == 'fr' else 
                        "what is the current date", 
                        "function": date_in_locale},
-
-    "mute": {"description": "mute le volume, mute le son, met en mode silence le volume" if LANGUAGE == 'fr' else 
-            "mute the volume, mute the sound, mute the volume", 
-            "function": mute},
-
-    "demute": {"description": "remet le volume, demute le son" if LANGUAGE == 'fr' else 
-               "reset the volume, unmute the sound", 
-               "function": demute},
-
-    "volume_increase": {"description": "augmente le volumne, augmente le son" if LANGUAGE == 'fr' else 
-                        "increase the volume, increase the sound", 
-                        "function": volume_increase},
-
-    "volume_decrease": {"description": "diminue le volumne, diminue le son" if LANGUAGE == 'fr' else 
-                        "decrease the volume, decrease the sound", 
-                        "function": volume_decrease},
 
     "use_code_mode": {"description": "mode code qui est un outil pour faire de la programmation, du codage" if LANGUAGE == 'fr' else 
                       "code mode which is a tool for programming, coding", 
