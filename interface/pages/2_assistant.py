@@ -35,8 +35,10 @@ def delete_conversation(file_path):
 def download_conversation(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         conversation = json.load(file)
-    csv_content = "\n".join(conversation)
-    st.download_button(
+    csv_content = ""
+    for message in conversation:
+        csv_content += f"{message['role']}: {message['content']}\n"
+    st.sidebar.download_button(
         label="Télécharger CSV" if LANGUAGE == 'fr' else "Download CSV",
         data=csv_content,
         file_name=os.path.basename(file_path).replace('.json', '.csv'),
@@ -60,10 +62,7 @@ if selected_conversation:
 
         # Adapt the data format to store roles and content in session state
         for message in conversation:
-            if message.startswith("User:"):
-                st.session_state.session_state.append({"role": "user", "content": message.split("User:")[1].strip()})
-            elif message.startswith("Assistant:"):
-                st.session_state.session_state.append({"role": "assistant", "content": message.split("Assistant:")[1].strip()})
+            st.session_state.session_state.append({"role": message["role"], "content": message["content"]})
     
     # Display the chat history on Streamlit
     for message in st.session_state.session_state:
