@@ -26,6 +26,17 @@ The Lux Kernels also includes:
 - **Inspired by Linux Kernel**: A flexible and small assistant core to allow developers to create various features with it and be able to use it as a base.
 
 
+## 🔧 Lux Tools
+
+Find here the different official tools that you can integrate into your Lux assistant:
+
+**[Lux-Official-Tools](https://github.com/nixiz0/Lux-Tools)**
+
+Find here the different community tools that you can integrate into your Lux assistant:
+
+**[Lux-Community-Tools](https://github.com/nixiz0/Lux-Tools/tree/community-tools)**
+
+
 ## 🚀 Installation
 
 1. **Download the App**:
