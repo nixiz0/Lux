@@ -38,10 +38,7 @@ The Lux Kernels also includes:
 
 ## 🏗️ System Architecture
 
-<div style="display: flex; flex-direction: row;">
-  <img src="interface/ressources/schema-system-architecture/lux-global-architecture-project.png" alt="Lux Global Architecture of the project" width="400"/>
-  <img src="interface/ressources/schema-system-architecture/lux-interface-architecture-system.png" alt="Lux-Interface Architecture System" width="400"/>
-</div>
+<img src="interface/ressources/schema-system-architecture/lux-system-architecture.png" alt="Lux System Architecture" width="800"/>
 
 
 ## Tech Stack
