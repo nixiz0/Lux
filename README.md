@@ -10,6 +10,11 @@ Interface of Lux assistant which has a speech to text to transcribe your voice i
 => Afterwards you click on lux-interface.exe to build environment for the app.
 
 
+## Architecture System
+
+![Lux-Interface Architecture System](interface/ressources/schema-system-architecture/lux-interface-architecture-system.png)
+
+
 ## Tech Stack
 
 [Application you have to install on your computer]
