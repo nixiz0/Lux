@@ -38,11 +38,10 @@ The Lux Kernels also includes:
 
 ## 🏗️ System Architecture
 
-Here are the system architecture diagrams for the Lux project:
-
-<img src="interface/ressources/schema-system-architecture/lux-global-architecture-project.png" alt="Lux Global Architecture of the project" width="400"/>
-
-<img src="interface/ressources/schema-system-architecture/lux-interface-architecture-system.png" alt="Lux-Interface Architecture System" width="400"/>
+<div style="display: flex; flex-direction: row;">
+  <img src="interface/ressources/schema-system-architecture/lux-global-architecture-project.png" alt="Lux Global Architecture of the project" width="400"/>
+  <img src="interface/ressources/schema-system-architecture/lux-interface-architecture-system.png" alt="Lux-Interface Architecture System" width="400"/>
+</div>
 
 
 ## Tech Stack
@@ -63,9 +62,9 @@ Here are the system architecture diagrams for the Lux project:
 - ffmpeg (put on path env variable) : ```scoop install ffmpeg``` and go on like C:\Users\your_user_name\scoop\apps\ffmpeg\your_version_of_ffmpeg\bin, copy the absolute path on the url on the top, open your environnement variables, go on 'PATH' in your user on your environnement variables and click on 'new' button and paste the url that you copied
 
 
-## Narrator Voices
+## Windows Narrator Voices
 
-If you want to have more synthetic voices available, on Windows you have to go to the narrator settings and you can download the voices you want.
+If you want to use Windows Narrator Voices instead of cloned voices, you have more synthetic voices available you have to go to the narrator settings and you can download the voices you want.
 
 If this doesn't work and doesn't recognize the voices you have installed on the narrator settings, follow this steps :
 
