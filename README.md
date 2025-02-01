@@ -12,7 +12,7 @@ Interface of Lux assistant which has a speech to text to transcribe your voice i
 
 ## Architecture System
 
-![Lux-Interface Architecture System](interface/ressources/schema-system-architecture/lux-interface-architecture-system.png)
+<img src="interface/ressources/schema-system-architecture/lux-interface-architecture-system.png" alt="Lux-Interface Architecture System" width="400"/>
 
 
 ## Tech Stack
