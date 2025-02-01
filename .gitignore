@@ -1,0 +1,17 @@
+# Env files
+__pycache__
+.env
+
+# Temp audio & voice folder
+audio/speech_to_text/temp_audio
+audio/synthetic_voice/temp_voice
+
+# Temp tools vector db
+agent_llm/rag/tools_vector_db
+
+# Modelfile system instruction for models
+modelfile
+
+# Photo taken
+photos
+
