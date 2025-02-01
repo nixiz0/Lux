@@ -107,10 +107,14 @@ def adding_tool():
         st.success(f"L'outil {zip_filename} a correctement été importé dans votre assistant." if LANGUAGE == 'fr' else
                    f"The tool {zip_filename} has been successfully imported into your assistant.")
 
-    # Highlight the instruction text
-    st.write("**Une fois que vous avez importé tous les outils que vous voulez, cliquez sur le bouton ci-dessous**" if LANGUAGE == 'fr' else 
-             "**Once you have imported all the tools you want, click the button below**")
+        st.write("**Après avoir importé vos outils, cliquez sur la croix pour supprimer le fichier upload dans l'application.**" if LANGUAGE == 'fr' else 
+                "**After importing your tools, click on the cross to delete the upload file in the application.**")
 
-    # Change checkbox to button
-    if st.button("Ajouter vos outils importés" if LANGUAGE == 'fr' else "Add your imported tools", key='config_revectorize_tools'):
-        revectorize_tool()
+    if uploaded_file is None:
+        # Highlight the instruction text
+        st.write("**Une fois que vous avez importé tous les outils que vous voulez, cliquez sur le bouton ci-dessous**" if LANGUAGE == 'fr' else 
+                 "**Once you have imported all the tools you want, click the button below**")
+
+        # Change checkbox to button
+        if st.button("Ajouter vos outils importés" if LANGUAGE == 'fr' else "Add your imported tools", key='config_revectorize_tools'):
+            revectorize_tool()
