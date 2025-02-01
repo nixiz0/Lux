@@ -59,7 +59,7 @@ The Lux Kernels also includes:
 
 - **FFmpeg**:
   ```powershell
-  scoop install ffmpeg```
+  scoop install ffmpeg
 
 
 ## 🎙️ Windows Narrator Voices
