@@ -9,13 +9,16 @@ from CONFIG import NARRATOR_VOICE, TEMP_OUTPUT_VOICE_PATH
 
 
 def split_text_and_code(text):
-    # Define a regex pattern for code detection
-    pattern = r'(```.*?```)'  # This pattern matches text within triple backticks
-    
-    # Use regex split to separate text and code
-    segments = re.split(pattern, text, flags=re.DOTALL)
-    
-    return segments
+    if text is None:
+        return []  # Return an empty list if text is None
+    else:
+        # Define a regex pattern for code detection
+        pattern = r'(```.*?```)'  # This pattern matches text within triple backticks
+        
+        # Use regex split to separate text and code
+        segments = re.split(pattern, text, flags=re.DOTALL)
+        
+        return segments
 
 class LuxVoice:
     def __init__(self):
