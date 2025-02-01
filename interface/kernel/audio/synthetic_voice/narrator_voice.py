@@ -20,6 +20,10 @@ def split_text_and_code(text):
         
         return segments
 
+def clean_text(text):
+    # Remove special characters except periods, commas, exclamation points, and question marks
+    return ''.join(char for char in text if char.isalnum() or char.isspace() or char in {'.', ',', '!', '?'})
+
 class LuxVoice:
     def __init__(self):
         self.engine = pyttsx3.init()
@@ -33,6 +37,9 @@ class LuxVoice:
             if segment.startswith('```') and segment.endswith('```'):
                 pass
             else:   
+                # Clean the text segment
+                clean_segment = clean_text(segment)
+
                 # Create the directory if it doesn't exist
                 os.makedirs(os.path.dirname(TEMP_OUTPUT_VOICE_PATH), exist_ok=True)
 
@@ -44,7 +51,7 @@ class LuxVoice:
                 self.engine.setProperty('voice', NARRATOR_VOICE)
 
                 # Convert text to speech and save it to a file
-                self.engine.save_to_file(segment, TEMP_OUTPUT_VOICE_PATH)
+                self.engine.save_to_file(clean_segment, TEMP_OUTPUT_VOICE_PATH)
 
                 # Wait for any pending speech to complete
                 self.engine.runAndWait()
