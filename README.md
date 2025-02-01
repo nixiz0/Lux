@@ -1,16 +1,46 @@
-# Lux-Interface
+# Lux Project
 
-Interface of Lux assistant which has a speech to text to transcribe your voice into text, a RAG system on tools to use tools according to the user's prompt and finally a voice cloning system allowing you to do text to speech on a customizable voice that you choose (or you can keep the voice that is already cloned and used by default in the kernel).
-
-
-## Installation
-
-=> Click on Lux-Interface-Installer.exe to download the app (be careful to install the necessary applications in Tech Stack).
-
-=> Afterwards you click on lux-interface.exe to build environment for the app.
+Welcome to the **Lux Project**! This project aims to provide a powerful and flexible assistant for all users (using the version accessible to all who are Lux-Interface) but also for developers (using the Lux-Kernel versions here) allowing developers to use this as a basis to build whatever they want with.
 
 
-## Architecture System
+## 🖥️ Lux Interface
+
+The **Lux Interface** is designed for end-users who may not be developers. It provides a user-friendly interface to configure and personalize the assistant without using command lines.
+
+The interface is user-friendly and allow to:
+- Configure the system.
+- Import different tools.
+- Run the asssitant.
+
+
+## 🛠️ Lux Kernel
+
+The **Lux Kernel** is designed for developers and consists of two main components:
+
+1. **Synthetic Cloned Voice Kernel**: A text-to-speech system using cloned synthetic voices (*requires high-performance hardware to use this system*), here we use *CoquiTTS*.
+2. **Synthetic Narrator Voice Kernel**: A text-to-speech system using a windows narrator's voice.
+
+The Lux Kernels also includes:
+- **Speech-to-Text**: Convert spoken words into text, using *Whisper large v3*.
+- **Intelligent Tool Selection System**: Using a RAG system to select tools based on user prompts, using *sklearn* for similarity & *ChromaDB* for vector database.
+- **Inspired by Linux Kernel**: A flexible and small assistant core to allow developers to create various features with it and be able to use it as a base.
+
+
+## 🚀 Installation
+
+1. **Download the App**:
+   - Click on `Lux-Interface-Installer.exe` to download the app.
+   - Ensure to install the necessary applications in the *Tech Stack*.
+
+2. **Build the Environment**:
+   - Click on `lux-interface.exe` to build the environment for the app.
+
+
+## 🏗️ System Architecture
+
+Here are the system architecture diagrams for the Lux project:
+
+<img src="interface/ressources/schema-system-architecture/lux-global-architecture-project.png" alt="Lux Global Architecture of the project" width="400"/>
 
 <img src="interface/ressources/schema-system-architecture/lux-interface-architecture-system.png" alt="Lux-Interface Architecture System" width="400"/>
 
