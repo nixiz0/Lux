@@ -41,39 +41,48 @@ The Lux Kernels also includes:
 <img src="interface/ressources/schema-system-architecture/lux-system-architecture.png" alt="Lux System Architecture" width="800"/>
 
 
-## Tech Stack
+## ⚙️ Tech Stack
 
-[Application you have to install on your computer]
+### Applications You Need to Install
 
-=> Download Ollama : https://ollama.com/download (version 0.5.4)
+1. **[Ollama](https://ollama.com/download) (version 0.5.4)**
+2. **[Python 3.11](https://www.python.org/downloads/release/python-3117/)** (add path to your OS environment variable)
+3. **[CUDA 11.8](https://developer.nvidia.com/cuda-11-8-0-download-archive)** (ensure your graphics card is compatible)
 
-=> Download Python 3.11 (and add path to your os env variable) : https://www.python.org/downloads/release/python-3117/
+### Additional Installations (if needed)
 
-=> Download CUDA 11.8 (check that your graphics card is compatible) : https://developer.nvidia.com/cuda-11-8-0-download-archive
+- **[VS Community](https://visualstudio.microsoft.com/fr/visual-cpp-build-tools/)** (with Desktop packages)
+- **Scoop**:
+  ```powershell
+  powershell -Command "Set-ExecutionPolicy RemoteSigned -scope CurrentUser"
+  powershell -Command "iex (new-object net.webclient).downloadstring('https://get.scoop.sh')"
 
-*You may need to install (depends on your computer)*
-- VS Community (with Dekstop packages) : https://visualstudio.microsoft.com/fr/visual-cpp-build-tools/
-
-- scoop : ```powershell -Command "Set-ExecutionPolicy RemoteSigned -scope CurrentUser"``` & ```powershell -Command "iex (new-object net.webclient).downloadstring('https://get.scoop.sh')"```
-
-- ffmpeg (put on path env variable) : ```scoop install ffmpeg``` and go on like C:\Users\your_user_name\scoop\apps\ffmpeg\your_version_of_ffmpeg\bin, copy the absolute path on the url on the top, open your environnement variables, go on 'PATH' in your user on your environnement variables and click on 'new' button and paste the url that you copied
+- **FFmpeg**:
+  ```powershell
+  scoop install ffmpeg```
 
 
-## Windows Narrator Voices
+## 🎙️ Windows Narrator Voices
 
-If you want to use Windows Narrator Voices instead of cloned voices, you have more synthetic voices available you have to go to the narrator settings and you can download the voices you want.
+To use Windows Narrator Voices instead of cloned voices, you can download more synthetic voices from the narrator settings.
 
-If this doesn't work and doesn't recognize the voices you have installed on the narrator settings, follow this steps :
+If it doesn't recognize the voices you installed, follow these steps:
 
-- 1-/Open the Registry Editor by pressing the “Windows” and “R” keys simultaneously, then type “regedit” and press Enter.
+1. **Open the Registry Editor**:
+   - Press the “Windows” and “R” keys simultaneously, type “regedit”, and press Enter.
 
-- 2-/Navigate to the registry key : HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices\Tokens.
+2. **Navigate to the Registry Key**:
+   - `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices\Tokens`
 
-- 3-/Export this key to a REG file (with a right click on the file).
+3. **Export the Key to a REG File**:
+   - Right-click on the key and select "Export".
 
-- 4-/Open this file with a text editor and replace all occurrences of HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices\Tokens with HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SPEECH\Voices\Tokens.
+4. **Edit the REG File**:
+   - Open the REG file with a text editor.
+   - Replace all occurrences of `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices\Tokens` with `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SPEECH\Voices\Tokens`.
 
-- 5-/Save the modified file and double-click it to import the changes to the registry.
+5. **Import the Modified REG File**:
+   - Save the modified file and double-click it to import the changes to the registry.
 
 
 ## Author
