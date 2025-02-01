@@ -51,5 +51,5 @@ def build_the_model():
     
     # Execute the command 'ollama create'
     subprocess.run(['ollama', 'create', LLM_USE, '--file', os.path.join(SYSTEM_INSTRUCTION_PATH, 'modelfile')])
-    st.sidebar.success(f"Modèle LLM '{LLM_USE}' créé avec succès." if LANGUAGE == 'fr' else 
-                       f"LLM Model '{LLM_USE}' created successfully.")
+    st.sidebar.success(f"Assistant '{LLM_USE}' créé avec succès." if LANGUAGE == 'fr' else 
+                       f"Assistant '{LLM_USE}' created successfully.")

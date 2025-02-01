@@ -3,7 +3,7 @@ import os
 import time
 
 from CONFIG import LANGUAGE, CAM_INDEX_USE
-from configuration.select_cam import set_video_device
+from configuration.cam.select_cam import set_video_device
 
 
 def screen_with_cam():

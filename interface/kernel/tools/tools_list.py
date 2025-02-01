@@ -3,13 +3,10 @@ from kernel.tools.tools_functions.tools_response.hello_sir import hello
 from kernel.tools.tools_functions.pause_system import pause_running
 from kernel.tools.tools_functions.exit_system import stop_running
 from kernel.tools.tools_functions.tools_action.time import time_in_locale, date_in_locale
-from kernel.tools.tools_functions.tools_action.code_mode.start_code_mode import use_code_mode
-from kernel.tools.tools_functions.tools_action.discussion_mode.start_discussion_mode import use_discussion_mode
-from kernel.tools.tools_functions.tools_action.cam.screen_cam import screen_with_cam
 from kernel.tools.tools_functions.tools_action.screenshot import screen
+from kernel.tools.tools_functions.tools_action.cam.screen_cam import screen_with_cam
 from kernel.tools.tools_functions.tools_action.take_note import vocal_note
-from kernel.tools.tools_functions.tools_action.vision_mode.start_vision import start_llm_vision
-from kernel.tools.tools_functions.tools_action.web_search.search_webs import search_ytb, search_google, search_wikipedia, search_bing, search_gpt
+from kernel.tools.tools_functions.tools_action.web_search.search_webs import search_ytb, search_google, search_wikipedia, search_bing
 
 
 tools = {
@@ -33,14 +30,6 @@ tools = {
                        "what is the current date", 
                        "function": date_in_locale},
 
-    "use_code_mode": {"description": "mode code qui est un outil pour faire de la programmation, du codage" if LANGUAGE == 'fr' else 
-                      "code mode which is a tool for programming, coding", 
-                      "function": use_code_mode},
-
-    "use_discussion_mode": {"description": "mode discussion qui permet d'avoir une conversation, une discussion, de discuter" if LANGUAGE == 'fr' else 
-                            "discussion mode which allows to have a conversation, a discussion, to discuss", 
-                            "function": use_discussion_mode},
-
     "screen_with_cam": {"description": "screen avec la caméra" if LANGUAGE == 'fr' else 
                         "screen with the camera", 
                         "function": screen_with_cam},
@@ -52,10 +41,6 @@ tools = {
     "vocal_note": {"description": "prends note" if LANGUAGE == 'fr' else 
                    "take note", 
                    "function": vocal_note},
-
-    "start_llm_vision": {"description": "outil pour utiliser le mode vision" if LANGUAGE == 'fr' else 
-                         "tool to use vision mode", 
-                         "function": start_llm_vision},
 
     "search_ytb": {"description": "recherche sur youtube, cherche sur youtube" if LANGUAGE == 'fr' else 
                    "search on youtube", 
@@ -73,7 +58,4 @@ tools = {
                     "search on bing", 
                     "function": search_bing},
 
-    "search_gpt": {"description": "ouvre chat gpt" if LANGUAGE == 'fr' else 
-                   "open chat gpt", 
-                   "function": search_gpt},
 }

@@ -1,3 +1,4 @@
+from CONFIG import PARAMS_LIST_TOOLS
 from kernel.agent_llm.rag.similarity_search import get_most_similar_tool
 from kernel.agent_llm.llm.llm import llm_prompt
 
@@ -29,7 +30,7 @@ def analyze_tool_to_use(user_prompt, tools, tool_embeddings):
         
         #------------ Adapt here and paste the code depending on tools downloaded --------
         # Set parameters based on selected tool
-        if similar_tool in ["search_ytb", "search_google", "search_wikipedia", "search_bing", "vocal_note"]:
+        if similar_tool in PARAMS_LIST_TOOLS:
             param = user_prompt
         else:
             param = None

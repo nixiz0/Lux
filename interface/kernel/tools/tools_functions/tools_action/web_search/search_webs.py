@@ -44,9 +44,3 @@ def search_bing(user_prompt):
             url = "https://www.bing.com/search?q=" + search
             webbrowser.open(url)
             return f"Voici ce que j'ai trouvé sur Bing {search}" if LANGUAGE == 'fr' else f"Here's what I found on Bing {search}"
-        
-def search_gpt():
-    # Chat GPT
-    url = "https://chat.openai.com/"
-    webbrowser.open(url)
-    return f"Ouverture de Chat GPT" if LANGUAGE == 'fr' else f"Open Chat GPT"

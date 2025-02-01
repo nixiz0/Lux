@@ -1,8 +1,26 @@
 import requests
+import subprocess
 from CONFIG import *
 
 
 def generate_embedding(text):
+    # Check if LLM_EMBEDDING model is present
+    try:
+        subprocess.run(["ollama", "list"], check=True, capture_output=True)
+        models_list = subprocess.run(["ollama", "list"], capture_output=True, text=True).stdout
+        if LLM_EMBEDDING not in models_list:
+            if LANGUAGE == 'fr':
+                print(f"Le modèle {LLM_EMBEDDING} n'est pas présent. Téléchargement en cours...")
+            else: 
+                print(f"The {LLM_EMBEDDING} model is not present. Download in progress...")
+            subprocess.run(["ollama", "pull", LLM_EMBEDDING], check=True)
+    except subprocess.CalledProcessError as e:
+        if LANGUAGE == 'fr':
+            print(f"Erreur lors de la vérification du modèle: {e}")
+        else: 
+            print(f"Error checking model: {e}")
+        return None
+
     # Choose the LLM Embedding Server API you want:
     """ Local Ollama (on your computer) """
     url = "http://localhost:11434/api/embeddings"

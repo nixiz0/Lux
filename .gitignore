@@ -15,3 +15,6 @@ modelfile
 # Photo taken
 photos
 
+# JSON Save LLM Conversations
+conversation_history
+
