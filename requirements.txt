@@ -1,7 +1,7 @@
 accelerate==0.34.2
 chromadb==0.5.11
 numpy==1.26.4
-ollama==0.3.3
+ollama==0.4.7
 requests==2.32.3
 scikit-learn==1.6.1
 sounddevice==0.5.0

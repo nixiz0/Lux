@@ -5,28 +5,27 @@ from CONFIG import *
 def generate_llm_response(prompt, context):
     # Template for the prompt
     if LANGUAGE == 'fr':
-        prompt_template = f"""Répondez à la question en français en vous basant uniquement sur le contexte suivant:
-        Contexte: {context}
-        Question: {prompt}
-        """
+        system_message = "Vous êtes un assistant IA qui répond aux questions en français en se basant uniquement sur le contexte fourni."
+        user_message = f"Contexte: {context}\nQuestion: {prompt}"
     else:
-        prompt_template = f"""Answer to the question in english based only on the following context:
-        Context: {context}
-        Question: {prompt}
-        """
+        system_message = "You are an AI assistant that answers questions in English based only on the provided context."
+        user_message = f"Context: {context}\nQuestion: {prompt}"
 
     # Choose the LLM Server API you want:
     """ Local Ollama (on your computer) """
     client = ollama.Client()  
 
     """ API Ollama (on server) """
-    # client = ollama.Client(host="http://172.17.0.1:11434/")
+    # client = ollama.Client(host="http://172.17.0.1:11434")
 
-    response = client.generate(
+    response = client.chat(
         model=LLM_USE,  # Local Model
         # model="llama3.1",  # API Model
-        prompt=prompt_template
+        messages=[
+            {"role": "system", "content": system_message},
+            {"role": "user", "content": user_message}
+        ]
     )
 
-    text_content = response['response']
+    text_content = response.message.content
     return text_content
