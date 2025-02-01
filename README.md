@@ -28,11 +28,11 @@ The Lux Kernels also includes:
 
 ## 🔧 Lux Tools
 
-Find here the different official tools that you can integrate into your Lux assistant:
+Find here the different **official tools** that you can integrate into your Lux assistant:
 
 **[Lux-Official-Tools](https://github.com/nixiz0/Lux-Tools)**
 
-Find here the different community tools that you can integrate into your Lux assistant:
+Find here the different **community tools** that you can integrate into your Lux assistant:
 
 **[Lux-Community-Tools](https://github.com/nixiz0/Lux-Tools/tree/community-tools)**
 
