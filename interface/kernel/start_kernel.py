@@ -44,15 +44,16 @@ def start_lux(tools=tools):
 
         if response in pause_keyword:
             lux_voice.speak("Le système a été mis en pause monsieur" if LANGUAGE == 'fr' else "The system has been paused sir")
+            pause_keywords = ["arrête le mode pause", "arrête la pause", "reprend le système", "tu peux reprendre", 
+                              "stop pause mode", "stop pause", "restarting the system", "you can unpause", "unpaused"]
+            st.error(f"Dire une de ces phrases pour arrêter le mode pause : {pause_keywords}" if LANGUAGE == 'fr' else f"Say one of these phrases to stop pause mode : {pause_keywords}")
             paused = True
             while paused:
                 record_audio()
                 speech_transcribe = whisper.transcribe(TEMP_AUDIO_PATH)
                 prompt = speech_transcribe
                 st.write(prompt)
-
-                if prompt in ["arrête le mode pause", "arrête la pause", "reprend le système", "tu peux reprendre", 
-                              "stop pause mode", "stop pause", "restarting the system", "you can unpause", "unpaused"]:
+                if prompt in pause_keywords:
                     paused = False
                     lux_voice.speak("Le système reprend de ses fonctions, ça fait du bien d'être de retour monsieur" if LANGUAGE == 'fr' else 
                                     "The system is resuming its functions, it's good to be back sir")
