@@ -59,10 +59,10 @@ Find here the different **community tools** that you can integrate into your Lux
 1. **[Ollama](https://ollama.com/download) (version 0.5.7)**
 2. **[Python 3.11](https://www.python.org/downloads/release/python-3117/)** (add path to your OS environment variable)
 3. **[CUDA 11.8](https://developer.nvidia.com/cuda-11-8-0-download-archive)** (ensure your graphics card is compatible)
+4. **[VS Community](https://visualstudio.microsoft.com/fr/visual-cpp-build-tools/)** (with Desktop packages)
 
 ### Additional Installations (if needed)
 
-- **[VS Community](https://visualstudio.microsoft.com/fr/visual-cpp-build-tools/)** (with Desktop packages)
 - **Scoop**:
   ```powershell
   powershell -Command "Set-ExecutionPolicy RemoteSigned -scope CurrentUser"
